@@ -1,4 +1,5 @@
 ---
+import "../styles/general.css";
 ---
 
 <html lang="en">
@@ -11,11 +12,28 @@
     <title>Astro</title>
   </head>
   <body>
-    <h1>Astro</h1>
-<nav>
-	
-</nav>
+    <header>
+      <nav>
+        <h3>OMADA WINE AND DELI</h3>
+      </nav>
+    </header>
     <a href="/julius"> Julius</a>
     <a href="/magnus"> magnus</a>
+    <section>
+      <div class="img_con">
+        <img src=" https: source.unsplash.com random " alt="" />
+      </div>
+    </section>
   </body>
 </html>
+
+<style>
+  nav {
+    background-color: var(--primarycolor);
+    color: var(--secondarycolor);
+  }
+  nav h3 {
+    padding-block: 1rem;
+    margin-left: 1rem;
+  }
+</style>
