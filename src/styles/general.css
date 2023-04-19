@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 img {
   width: 100%;
   display: block;
@@ -11,6 +12,9 @@ img {
 html {
   --primarycolor: #ff4a43;
   --secondarycolor: #fffefa;
+}
+body {
+  background-color: var(--secondarycolor);
 }
 
 h1 {
