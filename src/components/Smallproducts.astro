@@ -4,7 +4,7 @@ import Knap from "./knap.astro";
 ---
 
 <div class="product">
-    <div class="img_container">
+    <div>
     <img src="https://source.unsplash.com/random/" alt="">
     </div>
     <section>
@@ -19,26 +19,22 @@ import Knap from "./knap.astro";
 <style>
    
   
-    section{
+section{
         background-color: var(--primarycolor);
         color: var(--secondarycolor);
         display: flex;
         flex-direction: column;
-    }
+}
  section *{
     margin-block: 0.2rem;
  }
- .img_container{
-    
- }
+
     img{
         height: 100%;
     }
     .product{
-        display: grid;
-        grid-template-rows:2fr 1fr ;
-        height: 310px;
-        width: 240px;
+        height: 18rem;
+        min-width: 13rem;
     }
   
     .knap{
