@@ -1,0 +1,50 @@
+---
+import Knap from "./knap.astro";
+---
+
+<div class="card">
+  <div class="img_container">
+    <img src="https://source.unsplash.com/random" alt="" />
+  </div>
+  <div class="content">
+    <div class="left">
+      <h3>Nye produkter</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error aliquid ut sit distinctio quisquam unde quasi praesentium. Dolore magnam reprehenderit beatae quasi enim, quas quae
+        exercitationem assumenda pariatur, voluptatum ipsa?
+      </p>
+    </div>
+    <div class="right">
+      <Knap text="Se mere" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: var(--primarycolor);
+    height: 550px;
+    width: 1000px;
+  }
+  .img_container {
+    height: 75%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+  }
+
+  img {
+    width: 100%;
+    margin: auto;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  h3,
+  p {
+    color: var(--secondarycolor);
+    margin-left: 1rem;
+  }
+</style>
