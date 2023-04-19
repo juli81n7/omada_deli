@@ -8,7 +8,7 @@ import Knap from "./knap.astro";
   </div>
   <div class="content">
     <div class="left">
-      <h3>Nye produkter</h3>
+      <h2>Nye produkter</h2>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error aliquid ut sit distinctio quisquam unde quasi praesentium. Dolore magnam reprehenderit beatae quasi enim, quas quae
         exercitationem assumenda pariatur, voluptatum ipsa?
@@ -24,27 +24,42 @@ import Knap from "./knap.astro";
   .card {
     background-color: var(--primarycolor);
     height: 550px;
-    width: 1000px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
   }
   .img_container {
-    height: 75%;
     width: 100%;
+    max-height: 450px;
+    min-height: 150px;
     overflow: hidden;
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   img {
-    width: 100%;
-    margin: auto;
+    display: block;
+    width: auto;
+    height: auto;
   }
 
   .content {
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
+    margin: auto;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
   }
-  h3,
+  h2,
   p {
     color: var(--secondarycolor);
     margin-left: 1rem;
+  }
+
+  .right {
+    margin-top: auto;
   }
 </style>

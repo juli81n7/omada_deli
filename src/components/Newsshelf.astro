@@ -2,6 +2,39 @@
 import Newscard from "./Newscard.astro";
 ---
 
+<h2>Nyheder og events</h2>
+<p>her ser du alle vores nyheder samt et overblik over de arrangementer som vi stabler på benene i deli'en</p>
+
 <section>
-  <Newscard />
+  <div class="scroll">
+    <Newscard />
+    <Newscard />
+    <Newscard />
+    <Newscard />
+    <Newscard />
+    <Newscard />
+  </div>
 </section>
+
+<style>
+  section {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+
+  .scroll {
+    display: flex;
+    overflow: scroll;
+  }
+
+  .card {
+  }
+  h2,
+  p {
+    margin-left: 1rem;
+  }
+  h2 {
+    margin-top: 2rem;
+  }
+</style>
