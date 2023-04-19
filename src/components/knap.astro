@@ -1,0 +1,27 @@
+---
+const { text } = Astro.props;
+---
+
+<button> {text}</button>
+
+<style>
+  button {
+    margin-right: 1rem;
+    background-color: var(--primarycolor);
+    border: 1px solid var(--secondarycolor);
+    color: var(--secondarycolor);
+    font-family: aviano-sans, sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-style: normal;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    width: max-content;
+    transition: 0.2s ease-in-out;
+  }
+
+  button:hover {
+    color: var(--primarycolor);
+    background-color: var(--secondarycolor);
+    transition: 0.2s ease-in-out;
+  }
+</style>
