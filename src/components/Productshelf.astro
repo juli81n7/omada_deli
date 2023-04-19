@@ -1,0 +1,39 @@
+---
+import Smallproducts from "./Smallproducts.astro";
+
+---
+
+<h2>Produkter</h2>
+<p>Her kan du se vores mange produkter</p>
+
+<section>
+    <div class="scroll">
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+        <Smallproducts/>
+    </div>
+</section>
+<style>
+      section {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+
+  .scroll {
+    display: flex;
+    overflow: scroll;
+  }
+</style>
