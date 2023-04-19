@@ -23,10 +23,14 @@ import "../styles/general.css";
         <h3>OMADA WINE & DELI</h3>
       </nav>
       <div class="herogrid">
-        <img src="../images/hero.png" alt="" />
-        <div>
+        <img class="heroimg" src="../images/hero.svg" alt="" />
+        <div class="herotxt">
           <h1>OMADA WINE & DELI</h1>
-          <h3>ØSTERBRO</h3>
+          <div class="easter">
+            <div class="line"></div>
+            <h3>ØSTERBRO</h3>
+            <div class="line"></div>
+          </div>
         </div>
       </div>
     </header>
@@ -36,9 +40,6 @@ import "../styles/general.css";
       <TestimonailsSection />
       <Form />
     </main>
-    <section>
-      <div class="img_con"></div>
-    </section>
   </body>
 </html>
 
@@ -50,5 +51,30 @@ import "../styles/general.css";
   nav h3 {
     padding-block: 1rem;
     margin-left: 1rem;
+  }
+  .herogrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .heroimg {
+    grid-column: 1/4;
+    grid-row: 1/4;
+  }
+  .herotxt {
+    grid-column: 1/4;
+    grid-row: 1/4;
+    place-self: center;
+    color: var(--secondarycolor);
+  }
+  .herotxt h3 {
+    text-align: center;
+  }
+  .line {
+    border-top: solid 1.5px white;
+    width: 100%;
+  }
+  .easter {
+    display: flex;
   }
 </style>
