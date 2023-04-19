@@ -1,8 +1,32 @@
+html {
+  --primarycolor: #ff4a43;
+  --secondarycolor: #fffefa;
+}
+
 h1 {
   font-family: aviano-sans, sans-serif;
   font-weight: 700;
+  font-size: 5rem;
   font-style: normal;
+  text-transform: uppercase;
 }
 
 h2 {
+  font-family: aviano-sans, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  font-family: aviano-sans, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  font-style: normal;
+}
+
+p {
+  font-family: gill-sans-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
