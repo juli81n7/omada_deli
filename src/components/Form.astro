@@ -1,22 +1,34 @@
 ---
+import Knap from "./knap.astro";
 ---
 
 <section>
-  <div></div>
   <form>
     <input type="text" name="firstname" required placeholder="Fornavn*" />
     <input type="text" name="lastname" required placeholder="Efternavn*" />
     <input type="text" name="mail" placeholder="minmail@gmail.com" />
-    <input class="all" type="text" name="Overskrift" placeholder="Overskrift" />
+    <input class="all" type="text" name="overskrift" placeholder="Overskrift*" />
+    <textarea class="all tekst" name="text" placeholder="Tekst*" style="resize: none;"></textarea>
+    <button> Send</button>
   </form>
 </section>
 <style>
   section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
   }
 
   input {
+    font-family: gill-sans-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    background-color: none;
+    border: 0.1px solid var(--primarycolor);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: black;
+  }
+  textarea {
     font-family: gill-sans-nova, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -31,6 +43,10 @@
     color: black;
     opacity: 0.7; /* Firefox */
   }
+  textarea::placeholder {
+    color: black;
+    opacity: 0.7; /* Firefox */
+  }
 
   form {
     margin-left: 1rem;
@@ -38,9 +54,60 @@
     margin-bottom: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 5fr;
     gap: 0.5rem;
   }
   .all {
-    grid-area: span1/3;
+    grid-column: span 3;
+  }
+  .tekst {
+    text-align: start;
+  }
+
+  button {
+    margin-right: 1rem;
+    background-color: var(--primarycolor);
+    border: 1px solid var(--secondarycolor);
+    color: var(--secondarycolor);
+    font-family: aviano-sans, sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-style: normal;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    width: max-content;
+    transition: 0.2s ease-in-out;
+  }
+
+  button:hover {
+    color: var(--primarycolor);
+    background-color: var(--secondarycolor);
+    transition: 0.2s ease-in-out;
   }
 </style>
+
+<script>
+  const url = "https://vvjmazqfuruokrbpmhso.supabase.co/rest/v1/testimonials";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4MTg5NzUyNywiZXhwIjoxOTk3NDczNTI3fQ.QWRntyBVW2JVPQQ0e8hnIS7ZBHJLKDatB41zxZHxJlk";
+
+  const form = document.querySelector("form");
+  form.addEventListener("submit", sendForm);
+
+  function sendForm(event) {
+    event.preventDefault();
+    const formData = form.elements;
+    let name = formData.firstname.value + " " + formData.lastname.value;
+    let header = formData.overskrift.value;
+    let text = formData.text.value;
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        apikey: key,
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, text, header }),
+    });
+  }
+</script>
