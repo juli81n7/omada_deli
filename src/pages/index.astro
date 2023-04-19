@@ -1,4 +1,6 @@
 ---
+import Newsshelf from "../components/Newsshelf.astro";
+import Productshelf from "../components/Productshelf.astro";
 import "../styles/general.css";
 ---
 
@@ -12,17 +14,22 @@ import "../styles/general.css";
     <title>Astro</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <h3>OMADA WINE AND DELI</h3>
-      </nav>
-    </header>
     <a href="/julius"> Julius</a>
     <a href="/magnus"> magnus</a>
-    <section>
-      <div class="img_con">
-        <img src=" https: source.unsplash.com random " alt="" />
+    <header>
+      <nav>
+        <h3>OMADA WINE & DELI</h3>
+      </nav>
+      <div>
+        <img src="https://source.unsplash.com/random/" alt="" />
       </div>
+    </header>
+    <main>
+      <Newsshelf />
+      <Productshelf />
+    </main>
+    <section>
+      <div class="img_con"></div>
     </section>
   </body>
 </html>
