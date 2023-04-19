@@ -3,19 +3,27 @@ import Knap from "./knap.astro";
 ---
 
 <section>
+  <h2>Fortæl os hvad du synes</h2>
   <form>
     <input type="text" name="firstname" required placeholder="Fornavn*" />
     <input type="text" name="lastname" required placeholder="Efternavn*" />
     <input type="text" name="mail" placeholder="minmail@gmail.com" />
     <input class="all" type="text" name="overskrift" placeholder="Overskrift*" />
     <textarea class="all tekst" name="text" placeholder="Tekst*" style="resize: none;"></textarea>
-    <button> Send</button>
+    <button>Send</button>
   </form>
 </section>
 <style>
   section {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h2 {
+    text-align: left;
+    margin-bottom: 1rem;
+    color: var(--primarycolor);
   }
 
   input {
