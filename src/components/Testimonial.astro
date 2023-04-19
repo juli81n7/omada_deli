@@ -1,0 +1,38 @@
+---
+const { name, headline, text } = Astro.props;
+---
+
+<div class="item">
+  <div class="content">
+    <h3 class="header">{headline}</h3>
+    <p class="text">
+      {text}
+    </p>
+    <p class="name">{name}</p>
+  </div>
+</div>
+
+<style>
+  .item {
+  }
+  .img_container {
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 1rem;
+  }
+  .content {
+    text-align: center;
+  }
+
+  h3 {
+    color: var(--primarycolor);
+  }
+
+  .name {
+    font-style: italic;
+  }
+  .text {
+    max-width: 80ch;
+    margin: auto;
+  }
+</style>

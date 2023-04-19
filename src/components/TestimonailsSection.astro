@@ -1,0 +1,40 @@
+---
+import Testimonial from "./Testimonial.astro";
+
+const url = "https://vvjmazqfuruokrbpmhso.supabase.co/rest/v1/testimonials";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4MTg5NzUyNywiZXhwIjoxOTk3NDczNTI3fQ.QWRntyBVW2JVPQQ0e8hnIS7ZBHJLKDatB41zxZHxJlk";
+
+const respons = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: key,
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+});
+const data = await respons.json();
+console.log(data);
+---
+
+<section>
+  {
+    data.map((testimonials) => {
+      return <Testimonial name={testimonials.name} headline={testimonials.headline} text={testimonials.text} />;
+    })
+  }
+</section>
+
+<style>
+  section {
+    min-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 5rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+</style>
