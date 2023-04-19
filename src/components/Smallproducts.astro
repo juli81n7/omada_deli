@@ -1,44 +1,41 @@
 ---
 import Knap from "./knap.astro";
-
 ---
 
 <div class="product">
-    <div>
-    <img src="https://source.unsplash.com/random/" alt="">
+  <div>
+    <img src="https://source.unsplash.com/random/" alt="" />
+  </div>
+  <section>
+    <h3>lorem ipsum</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus dolorum praesentium sed quod. Magnam architecto numquam iure, a illum ab praesentium optio fugiat laboriosam cumque aperiam consequatur dolor voluptatibus odit.</p>
+    <div class="knap">
+      <Knap text="Se mere" />
     </div>
-    <section>
-        <h3>lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus dolorum praesentium sed quod. Magnam architecto numquam iure, a illum ab praesentium optio fugiat laboriosam cumque aperiam consequatur dolor voluptatibus odit. </p>
-        <div class="knap">
-        <Knap text="Se mere"></Knap>
-        </div>
-    </section>
+  </section>
 </div>
 
 <style>
-   
-  
-section{
-        background-color: var(--primarycolor);
-        color: var(--secondarycolor);
-        display: flex;
-        flex-direction: column;
-}
- section *{
+  section {
+    background-color: var(--primarycolor);
+    color: var(--secondarycolor);
+    display: flex;
+    flex-direction: column;
+  }
+  section * {
     margin-block: 0.2rem;
- }
+  }
 
-    img{
-        height: 100%;
-    }
-    .product{
-        height: 18rem;
-        min-width: 13rem;
-    }
-  
-    .knap{
-        align-self: flex-end;
-    }
-   
+  img {
+    height: 100%;
+  }
+  .product {
+    height: 18rem;
+    min-width: 13rem;
+    margin-left: 1rem;
+  }
+
+  .knap {
+    align-self: flex-end;
+  }
 </style>
