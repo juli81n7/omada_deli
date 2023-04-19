@@ -1,4 +1,5 @@
 ---
+import Knap from "./knap.astro";
 
 ---
 
@@ -8,30 +9,37 @@
     </div>
     <section>
         <h3>lorem ipsum</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed eaque necessitatibus possimus fugiat, vitae eos ipsum enim error. Sed veritatis magnam provident recusandae sint quos inventore, molestias dolorem ex optio!</p>
-        <button>Se mere</button>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus dolorum praesentium sed quod. Magnam architecto numquam iure, a illum ab praesentium optio fugiat laboriosam cumque aperiam consequatur dolor voluptatibus odit. </p>
+        <div class="knap">
+        <Knap text="Se mere"></Knap>
+        </div>
     </section>
 </div>
 
 <style>
+   
+  
     section{
         background-color: var(--primarycolor);
         color: var(--secondarycolor);
         display: flex;
         flex-direction: column;
-
     }
-    section *{
-       
+ section *{
+    margin-block: 0.2rem;
+ }
+    img{
+        height: 100%;
     }
     .product{
         display: grid;
         grid-template-rows:2fr 1fr ;
-        height: 200px;
-        width: 200px;
+        height: 310px;
+        width: 240px;
     }
   
-    button{
+    .knap{
         align-self: flex-end;
     }
+   
 </style>
