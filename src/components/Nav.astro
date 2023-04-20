@@ -1,5 +1,5 @@
 <nav>
-  <h3>OMADA WINE & DELI</h3>
+  <a href="/"><h3>OMADA WINE & DELI</h3></a>
   <div class="social">
     <a href="https://www.facebook.com/magnus.the.m/" class="fa fa-facebook"></a>
     <a href="https://www.instagram.com/magnus_mans/" class="fa fa-instagram"></a>
@@ -19,12 +19,21 @@
     justify-content: space-between;
     align-items: center;
   }
+  nav a {
+    text-decoration: none;
+    color: var(--secondarycolor);
+  }
   nav h3 {
     padding-block: 1rem;
     margin-left: 1rem;
   }
   svg {
     width: 11px;
+    transition: ease;
+  }
+  svg:hover {
+    fill: lightgray;
+    transition: 0.2s;
   }
   .fa-instagram {
     background: transparent;
@@ -41,6 +50,10 @@
     width: 40px;
     text-align: center;
     text-decoration: none;
+  }
+  .fa:hover {
+    color: lightgray;
+    transition: 0.2s;
   }
   @media (max-width: 768px) {
     nav h3 {

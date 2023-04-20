@@ -59,7 +59,9 @@ const { item } = Astro.props;
   section {
     display: flex;
     background-color: var(--primarycolor);
-    margin: 1rem;
+    margin: 2rem;
+  }
+  section > * {
     flex-basis: 100%;
   }
   .indhold {
@@ -67,8 +69,28 @@ const { item } = Astro.props;
     flex-direction: column;
     justify-content: space-around;
     padding-inline: 1rem;
+    color: var(--secondarycolor);
+  }
+  .indhold p {
+    font-size: 1.2rem;
   }
   .knap {
     align-self: flex-end;
+  }
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column;
+    }
+    section h1 {
+      font-size: 2.5rem;
+      margin-top: 1rem;
+    }
+    .indhold p {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    .knap {
+      margin-block: 1.5rem;
+    }
   }
 </style>
