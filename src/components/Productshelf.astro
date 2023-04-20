@@ -1,8 +1,12 @@
 ---
 import Smallproducts from "./Smallproducts.astro";
 const url = "https://vvjmazqfuruokrbpmhso.supabase.co/rest/v1/indhold";
+<<<<<<< HEAD
 const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4OTc1MjcsImV4cCI6MTk5NzQ3MzUyN30.YlMWJwKf5ZiuYgrztptMIkJOiiSNUMiGzU40kWk80nc";
+=======
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4OTc1MjcsImV4cCI6MTk5NzQ3MzUyN30.YlMWJwKf5ZiuYgrztptMIkJOiiSNUMiGzU40kWk80nc";
+>>>>>>> 2757d9913d1be4b78ebe93ff0660fd9e543d3a84
 
 const respons = await fetch(url, {
   method: "GET",
@@ -12,9 +16,14 @@ const respons = await fetch(url, {
     "Content-Type": "application/json",
   },
 });
+<<<<<<< HEAD
 const alldata = await respons.json();
 
 const data = alldata.filter((item) => item.type == "produkt");
+=======
+const data = await respons.json();
+console.log(data);
+>>>>>>> 2757d9913d1be4b78ebe93ff0660fd9e543d3a84
 ---
 
 <div class="overskrift">
@@ -25,7 +34,11 @@ const data = alldata.filter((item) => item.type == "produkt");
   <div class="scroll">
     {
       data.map((item) => {
+<<<<<<< HEAD
         return <Smallproducts header={item.header} text={item.tekst.slice(0, 200) + "..."} img={"../images/" + item.img + ".webp"} date={item.date} price={item.price} type={item.type} id={item.id} />;
+=======
+        return <Smallproducts header={item.header} text={item.tekst.slice(0, 200) + "..."} img={"../images/" + item.img + ".webp"} date={item.date} price={item.price} type={item.type} id={"/undersider/" + item.id} />;
+>>>>>>> 2757d9913d1be4b78ebe93ff0660fd9e543d3a84
       })
     }
   </div>
