@@ -9,7 +9,8 @@ import Knap from "./knap.astro";
     <input type="text" name="lastname" required placeholder="Efternavn*" />
     <input type="text" name="mail" placeholder="minmail@gmail.com" />
     <input class="all" type="text" name="overskrift" placeholder="Overskrift*" />
-    <textarea class="all tekst" name="text" placeholder="Tekst*" style="resize: none;"></textarea>
+    <span class="textarea" role="textbox" contenteditable></span>
+
     <button>Send</button>
   </form>
 </section>
@@ -36,22 +37,20 @@ import Knap from "./knap.astro";
     padding: 0.5rem 1rem 0.5rem 1rem;
     color: black;
   }
-  textarea {
+  .textarea {
     font-family: gill-sans-nova, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1rem;
-    background-color: none;
+    background-color: white;
+    min-height: 300px;
     border: 0.1px solid var(--primarycolor);
     padding: 0.5rem 1rem 0.5rem 1rem;
     color: black;
+    grid-column: 1/4;
   }
 
   input::placeholder {
-    color: black;
-    opacity: 0.7; /* Firefox */
-  }
-  textarea::placeholder {
     color: black;
     opacity: 0.7; /* Firefox */
   }
@@ -92,6 +91,38 @@ import Knap from "./knap.astro";
     background-color: var(--secondarycolor);
     border-color: var(--primarycolor);
     transition: 0.2s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+
+      gap: 1rem;
+      width: 100%;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    textarea {
+      min-height: 200px;
+    }
+    button {
+      background-color: var(--primarycolor);
+      border: 1px solid var(--secondarycolor);
+      color: var(--secondarycolor);
+      font-family: aviano-sans, sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      font-style: normal;
+      height: 100%;
+      width: 100%;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+    }
   }
 </style>
 
