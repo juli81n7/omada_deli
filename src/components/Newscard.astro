@@ -27,25 +27,24 @@ import Knap from "./knap.astro";
     background-color: var(--primarycolor);
     height: 600px;
     aspect-ratio: 80 / 50;
-    margin-left: 1rem;
     display: flex;
     flex-direction: column;
+  }
+  .card:first-of-type {
+    margin-left: 1rem;
+  }
+  .card:last-of-type {
+    margin-right: 5rem;
   }
 
   .img_container {
     width: 100%;
-    max-height: 550px;
+    max-height: 1000px;
     min-height: 150px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  img {
-    display: block;
-    width: auto;
-    height: auto;
   }
 
   .content {
@@ -67,5 +66,52 @@ import Knap from "./knap.astro";
   }
   .right {
     margin-top: auto;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      background-color: var(--primarycolor);
+      max-width: 400px;
+      aspect-ratio: 15 / 10;
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+    .img_container {
+      min-width: 100%;
+      height: 400px;
+      margin-bottom: 0rem;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      object-fit: cover;
+      align-self: stretch;
+    }
+
+    .content {
+      display: block;
+      justify-content: space-between;
+      gap: 2rem;
+      margin: auto;
+      padding-bottom: 1.5rem;
+      padding-right: 2rem;
+      padding-top: 0rem;
+    }
+
+    p {
+      margin-right: 1rem;
+    }
+    .right {
+      margin-top: 1rem;
+      margin-left: 1rem;
+    }
+    .card:first-of-type {
+      margin-left: 1rem;
+    }
   }
 </style>
