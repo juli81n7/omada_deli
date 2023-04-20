@@ -14,6 +14,7 @@ import "../styles/general.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/bah6hne.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Astro</title>
   </head>
   <body>
@@ -22,6 +23,16 @@ import "../styles/general.css";
     <header>
       <nav>
         <h3>OMADA WINE & DELI</h3>
+        <div class="social">
+          <a href="https://www.facebook.com/magnus.the.m/" class="fa fa-facebook"></a>
+          <a href="https://www.instagram.com/magnus_mans/" class="fa fa-instagram"></a>
+          <a href="https://omada.wine/" class="fa"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" fill="white"
+              ><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path d="M64 0C47.4 0 33.5 12.8 32.1 29.3l-14 168.4c-6 72 42.5 135.2 109.9 150.6V448H80c-17.7 0-32 14.3-32 32s14.3 32 32 32h80 80c17.7 0 32-14.3 32-32s-14.3-32-32-32H192V348.4c67.4-15.4 115.9-78.6 109.9-150.6l-14-168.4C286.5 12.8 272.6 0 256 0H64zM81.9 203.1L93.4 64H226.6l11.6 139.1C242 248.8 205.9 288 160 288s-82-39.2-78.1-84.9z"></path></svg
+            ></a
+          >
+        </div>
       </nav>
       <div class="herogrid">
         <div class="imgcon">
@@ -51,6 +62,9 @@ import "../styles/general.css";
   nav {
     background-color: var(--primarycolor);
     color: var(--secondarycolor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   nav h3 {
     padding-block: 1rem;
@@ -63,8 +77,7 @@ import "../styles/general.css";
     height: 35rem;
     overflow: hidden;
   }
-  .heroimg {
-  }
+
   .herotxt {
     grid-column: 1/4;
     grid-row: 1/4;
@@ -74,6 +87,7 @@ import "../styles/general.css";
   .herotxt h3 {
     text-align: center;
   }
+
   .line {
     border-top: solid 1.5px white;
     width: 100%;
@@ -87,5 +101,47 @@ import "../styles/general.css";
   }
   .easter {
     display: flex;
+  }
+  svg {
+    width: 11px;
+  }
+  .fa-instagram {
+    background: transparent;
+    color: white;
+  }
+  .fa-facebook {
+    background: transparent;
+    color: white;
+  }
+
+  .fa-magnifying-glass {
+    background: transparent;
+    color: white;
+  }
+  .fa {
+    padding: 10px;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+  }
+  @media (max-width: 900px) {
+    .herotxt h1 {
+      font-size: 4rem;
+    }
+  }
+  @media (max-width: 768px) {
+    nav h3 {
+      font-size: 1rem;
+    }
+    .herotxt h1 {
+      font-size: 2rem;
+    }
+    .easter h3 {
+      font-size: 1rem;
+    }
+    .herogrid {
+      height: 15rem;
+    }
   }
 </style>
