@@ -1,0 +1,67 @@
+---
+---
+
+<div class="herogrid">
+  <div class="imgcon">
+    <img class="heroimg" src="../images/hero.svg" alt="" />
+  </div>
+  <div class="herotxt">
+    <h1>OMADA WINE & DELI</h1>
+    <div class="easter">
+      <div class="line"></div>
+      <h3>ØSTERBRO</h3>
+      <div class="line"></div>
+    </div>
+  </div>
+</div>
+<style>
+  .herogrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 35rem;
+    overflow: hidden;
+  }
+
+  .herotxt {
+    grid-column: 1/4;
+    grid-row: 1/4;
+    place-self: center;
+    color: var(--secondarycolor);
+  }
+  .herotxt h3 {
+    text-align: center;
+  }
+
+  .line {
+    border-top: solid 1.5px white;
+    width: 100%;
+    margin-top: 0.4rem;
+    margin-inline: 0.5rem;
+    width: 100%;
+  }
+  .imgcon {
+    grid-column: 1/4;
+    grid-row: 1/4;
+  }
+  .easter {
+    display: flex;
+  }
+
+  @media (max-width: 900px) {
+    .herotxt h1 {
+      font-size: 4rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .herotxt h1 {
+      font-size: 2rem;
+    }
+    .easter h3 {
+      font-size: 1rem;
+    }
+    .herogrid {
+      height: 15rem;
+    }
+  }
+</style>
