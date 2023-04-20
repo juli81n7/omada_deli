@@ -1,16 +1,30 @@
 ---
 import Knap from "./knap.astro";
+const { header, text, img, date, price, type, id } = Astro.props;
+const url = "https://vvjmazqfuruokrbpmhso.supabase.co/rest/v1/indhold";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4OTc1MjcsImV4cCI6MTk5NzQ3MzUyN30.YlMWJwKf5ZiuYgrztptMIkJOiiSNUMiGzU40kWk80nc";
+
+const respons = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: key,
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+});
+const data = await respons.json();
+console.log(data);
 ---
 
 <div class="product">
   <div>
-    <img src="https://source.unsplash.com/random/" alt="" />
+    <img src={img} alt={header} />
   </div>
   <section>
-    <h3>lorem ipsum</h3>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus dolorum praesentium sed quod. Magnam architecto numquam iure, a illum ab praesentium optio fugiat laboriosam cumque aperiam consequatur dolor voluptatibus odit.</p>
+    <h3>{header}</h3>
+    <p>{text}</p>
     <div class="knap">
-      <Knap text="Se mere" />
+      <Knap text="Se mere" id={id} />
     </div>
   </section>
 </div>

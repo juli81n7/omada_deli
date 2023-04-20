@@ -1,5 +1,18 @@
 ---
 import Smallproducts from "./Smallproducts.astro";
+const url = "https://vvjmazqfuruokrbpmhso.supabase.co/rest/v1/indhold";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4OTc1MjcsImV4cCI6MTk5NzQ3MzUyN30.YlMWJwKf5ZiuYgrztptMIkJOiiSNUMiGzU40kWk80nc";
+
+const respons = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: key,
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+});
+const data = await respons.json();
+console.log(data);
 ---
 
 <div class="overskrift">
@@ -8,17 +21,11 @@ import Smallproducts from "./Smallproducts.astro";
 </div>
 <section>
   <div class="scroll">
-    <Smallproducts />
-    <Smallproducts />
-    <Smallproducts />
-    <Smallproducts />
-    <Smallproducts />
-    <Smallproducts />
-    <Smallproducts />
-    <Smallproducts />
-    <Smallproducts />
-    <Smallproducts />
-    <Smallproducts />
+    {
+      data.map((item) => {
+        return <Smallproducts header={item.header} text={item.tekst.slice(0, 200) + "..."} img={"../images/" + item.img + ".webp"} date={item.date} price={item.price} type={item.type} id={"/undersider/" + item.id} />;
+      })
+    }
   </div>
 </section>
 <style>

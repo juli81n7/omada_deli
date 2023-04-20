@@ -1,7 +1,8 @@
 ---
 import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.astro";
-import Singleview from "../../components/Singleview.astro";
+import Knap from "../../components/knap.astro";
+import "../../styles/general.css";
 
 export async function getStaticPaths() {
   const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
@@ -23,6 +24,48 @@ export async function getStaticPaths() {
 const { item } = Astro.props;
 ---
 
-<Nav />
-<Singleview />
-<Footer />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="https://use.typekit.net/bah6hne.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <title>Astro</title>
+  </head>
+  <body>
+    <header>
+      <Nav />
+    </header>
+    <section>
+      <div class="imgcon">
+        <img src={"../../images/" + `${item.img}` + ".webp"} alt={item.header} />
+      </div>
+      <div class="indhold">
+        <h1>{item.header}</h1>
+        <p>{item.tekst}</p>
+        <div class="knap">
+          <Knap text="Se mere" />
+        </div>
+      </div>
+    </section>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  section {
+    display: flex;
+    background-color: var(--primarycolor);
+  }
+  .indhold {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .knap {
+    align-self: flex-end;
+  }
+</style>

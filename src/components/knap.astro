@@ -1,8 +1,8 @@
 ---
-const { text } = Astro.props;
+const { text, id } = Astro.props;
 ---
 
-<button>{text}</button>
+<button><a href={id}>{text}</a></button>
 
 <style>
   button {
