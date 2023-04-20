@@ -2,34 +2,47 @@
 ---
 
 <section>
-  <h2>Find vej til os</h2>
-  <p>Vi står klar med lækker vin, lækre delikatesser og godt humør!</p>
+  <div class="aabningstider">
+    <h2>Åbningstider</h2>
 
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.873835590112!2d12.573618677195878!3d55.69118119673533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465253b6ca64523b%3A0xdeeb88cddf88dfe5!2sOmada%20Wine%20%26%20Deli!5e0!3m2!1sda!2sdk!4v1681979724541!5m2!1sda!2sdk"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h3>Onsdag - søndag</h3>
+    <p>11:00 - 20:00</p>
+    <div class="lukket">
+      <h3>Mandag & tirdag</h3>
+      <p>Lukket</p>
+    </div>
+  </div>
+  <div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.873835590112!2d12.573618677195878!3d55.69118119673533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465253b6ca64523b%3A0xdeeb88cddf88dfe5!2sOmada%20Wine%20%26%20Deli!5e0!3m2!1sda!2sdk!4v1681979724541!5m2!1sda!2sdk"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
 </section>
 
 <style>
   iframe {
-    height: 500px;
+    height: 300px;
     width: 100%;
+    border: none;
   }
   section {
+    margin: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-
-    height: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+    gap: 3rem;
   }
   h2 {
     color: var(--primarycolor);
+    margin-bottom: 1rem;
+  }
+
+  .aabningstider {
+    text-align: center;
+  }
+  .lukket {
+    margin-top: 2rem;
   }
 </style>
