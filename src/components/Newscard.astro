@@ -1,10 +1,18 @@
 ---
 import Knap from "./knap.astro";
-const { header, text, img, date, price, type, id } = Astro.props;
+const { header, text, img, day, month, price, type, id } = Astro.props;
 ---
 
 <div class="card">
   <div class="img_container">
+    {
+      day && (
+        <div class="date">
+          <h2 class="day">{day}</h2>
+          <h2 class="month">{month}</h2>
+        </div>
+      )
+    }
     <img src={img} alt={header} />
   </div>
   <div class="content">
@@ -17,7 +25,7 @@ const { header, text, img, date, price, type, id } = Astro.props;
       </div>
     </div>
     <div class="right">
-      <Knap text="Se mere" />
+      <Knap link={id} text="Se mere" />
     </div>
   </div>
 </div>
@@ -37,6 +45,28 @@ const { header, text, img, date, price, type, id } = Astro.props;
     margin-right: 5rem;
   }
 
+  .date {
+    position: absolute;
+    background-color: var(--primarycolor);
+    color: var(--secondarycolor);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    right: 0;
+    top: 5%;
+  }
+
+  .month {
+    font-size: 0.7rem;
+    margin-top: 0rem;
+  }
+
+  .day {
+    margin-bottom: -0.3rem;
+  }
+
   .img_container {
     width: 100%;
     max-height: 1000px;
@@ -45,6 +75,7 @@ const { header, text, img, date, price, type, id } = Astro.props;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
   img {
     object-fit: cover;

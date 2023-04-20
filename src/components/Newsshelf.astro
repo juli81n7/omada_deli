@@ -24,7 +24,18 @@ console.log(data);
   <div class="scrollnews">
     {
       data.map((item) => {
-        return <Newscard header={item.header} text={item.tekst.slice(0, 200) + "..."} img={"../images/" + item.img + ".webp"} date={item.date} price={item.price} type={item.type} id={item.id} />;
+        return (
+          <Newscard
+            header={item.header}
+            text={item.tekst.slice(0, 200) + "..."}
+            img={"../images/" + item.img + ".webp"}
+            day={item.day}
+            month={item.month}
+            price={item.price}
+            type={item.type}
+            id={item.id}
+          />
+        );
       })
     }
   </div>

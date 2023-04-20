@@ -1,16 +1,20 @@
 ---
 import Knap from "./knap.astro";
+
+const { header, text, img, date, price, type, id } = Astro.props;
 ---
 
 <div class="product">
   <div>
-    <img src="https://source.unsplash.com/random/" alt="" />
+    <img src={img} alt="" />
   </div>
   <section>
-    <h3>lorem ipsum</h3>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus dolorum praesentium sed quod. Magnam architecto numquam iure, a illum ab praesentium optio fugiat laboriosam cumque aperiam consequatur dolor voluptatibus odit.</p>
+    <h3>{header}</h3>
+    <p>
+      {text}
+    </p>
     <div class="knap">
-      <Knap text="Se mere" />
+      <Knap link={id} text="Se mere" />
     </div>
   </section>
 </div>
