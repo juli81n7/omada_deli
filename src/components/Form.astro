@@ -54,6 +54,11 @@ import Knap from "./knap.astro";
     color: black;
     opacity: 0.7; /* Firefox */
   }
+  .textarea[contenteditable]:empty::before {
+    content: "Tekst*";
+    color: black;
+    opacity: 0.7; /* Firefox */
+  }
 
   form {
     margin-left: 1rem;
