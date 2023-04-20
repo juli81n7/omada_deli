@@ -12,7 +12,9 @@ const respons = await fetch(url, {
     "Content-Type": "application/json",
   },
 });
-const data = await respons.json();
+
+const alldata = await respons.json();
+const data = alldata.filter((item) => item.type == "produkt");
 console.log(data);
 ---
 

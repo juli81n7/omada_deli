@@ -2,7 +2,7 @@
 const { text, id } = Astro.props;
 ---
 
-<button><a href={id}>{text}</a></button>
+<a href={id}><button>{text}</button></a>
 
 <style>
   button {
@@ -24,5 +24,9 @@ const { text, id } = Astro.props;
     color: var(--primarycolor);
     background-color: var(--secondarycolor);
     transition: 0.2s ease-in-out;
+  }
+
+  a {
+    color: none;
   }
 </style>
