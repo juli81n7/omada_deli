@@ -8,8 +8,7 @@ export async function getStaticPaths() {
   const url = "https://vvjmazqfuruokrbpmhso.supabase.co/rest/v1/indhold";
   const options = {
     headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4OTc1MjcsImV4cCI6MTk5NzQ3MzUyN30.YlMWJwKf5ZiuYgrztptMIkJOiiSNUMiGzU40kWk80nc",
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4OTc1MjcsImV4cCI6MTk5NzQ3MzUyN30.YlMWJwKf5ZiuYgrztptMIkJOiiSNUMiGzU40kWk80nc",
     },
   };
 
@@ -48,7 +47,7 @@ const { item } = Astro.props;
         <h1>{item.header}</h1>
         <p>{item.tekst}</p>
         <div class="knap">
-          <Knap text="Se mere" />
+          <Knap text="Tilbage" id="../" />
         </div>
       </div>
     </section>
@@ -60,11 +59,14 @@ const { item } = Astro.props;
   section {
     display: flex;
     background-color: var(--primarycolor);
+    margin: 1rem;
+    flex-basis: 100%;
   }
   .indhold {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-inline: 1rem;
   }
   .knap {
     align-self: flex-end;
