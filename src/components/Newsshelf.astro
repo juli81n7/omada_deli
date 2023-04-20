@@ -6,7 +6,7 @@ import Newscard from "./Newscard.astro";
 <p>her ser du alle vores nyheder samt et overblik over de arrangementer som vi stabler på benene i deli'en</p>
 
 <section>
-  <div class="scroll">
+  <div class="scrollnews">
     <Newscard />
     <Newscard />
     <Newscard />
@@ -23,9 +23,11 @@ import Newscard from "./Newscard.astro";
     margin-top: 1rem;
   }
 
-  .scroll {
+  .scrollnews {
     display: flex;
     overflow: scroll;
+    scroll-behavior: smooth;
+    gap: 0.5rem;
   }
 
   .card {
@@ -36,5 +38,6 @@ import Newscard from "./Newscard.astro";
   }
   h2 {
     margin-top: 2rem;
+    color: var(--primarycolor);
   }
 </style>
