@@ -17,15 +17,17 @@ const data = await respons.json();
 console.log(data);
 ---
 
-<div>
+<div class="container">
   <h2>Vi er glade når i er glade</h2>
-  <section>
-    {
-      data.map((testimonials) => {
-        return <Testimonial name={testimonials.name} headline={testimonials.headline} text={testimonials.text} />;
-      })
-    }
-  </section>
+  <div>
+    <section>
+      {
+        data.map((testimonials) => {
+          return <Testimonial name={testimonials.name} headline={testimonials.headline} text={testimonials.text} />;
+        })
+      }
+    </section>
+  </div>
 </div>
 
 <style>
@@ -39,7 +41,7 @@ console.log(data);
     margin-left: 1rem;
     margin-right: 1rem;
   }
-  div {
+  .container {
     min-height: 500px;
     display: flex;
     flex-direction: column;
