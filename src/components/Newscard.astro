@@ -1,18 +1,18 @@
 ---
 import Knap from "./knap.astro";
+const { header, text, img, date, price, type, id } = Astro.props;
 ---
 
 <div class="card">
   <div class="img_container">
-    <img src="https://source.unsplash.com/random" alt="" />
+    <img src={img} alt={header} />
   </div>
   <div class="content">
     <div class="left">
       <div>
-        <h2 class="newshead">Nye produkter</h2>
+        <h2 class="newshead">{header}</h2>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error aliquid ut sit distinctio quisquam unde quasi praesentium. Dolore magnam reprehenderit beatae quasi enim, quas quae
-          exercitationem assumenda pariatur, voluptatum ipsa?
+          {text}
         </p>
       </div>
     </div>
@@ -46,6 +46,10 @@ import Knap from "./knap.astro";
     justify-content: center;
     align-items: center;
   }
+  img {
+    object-fit: cover;
+    align-self: stretch;
+  }
 
   .content {
     display: flex;
@@ -62,7 +66,7 @@ import Knap from "./knap.astro";
   }
 
   p {
-    margin-right: 20rem;
+    margin-right: 10rem;
   }
   .right {
     margin-top: auto;
