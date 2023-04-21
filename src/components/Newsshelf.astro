@@ -35,7 +35,7 @@ const eventdata = data.filter((item) => item.type == "event");
             month={item.month}
             price={item.price}
             type={item.type}
-            id={item.id}
+            id={"/undersider/" + item.id}
           />
         );
       })

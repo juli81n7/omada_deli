@@ -7,10 +7,12 @@ import Nav from "../components/Nav.astro";
 import Newsshelf from "../components/Newsshelf.astro";
 import Productshelf from "../components/Productshelf.astro";
 import TestimonailsSection from "../components/TestimonailsSection.astro";
+import Loader from "../components/loader.astro";
 import "../styles/general.css";
 
 const url = "https://vvjmazqfuruokrbpmhso.supabase.co/rest/v1/indhold";
-const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4OTc1MjcsImV4cCI6MTk5NzQ3MzUyN30.YlMWJwKf5ZiuYgrztptMIkJOiiSNUMiGzU40kWk80nc";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE4OTc1MjcsImV4cCI6MTk5NzQ3MzUyN30.YlMWJwKf5ZiuYgrztptMIkJOiiSNUMiGzU40kWk80nc";
 
 const respons = await fetch(url, {
   method: "GET",
@@ -36,8 +38,7 @@ console.log(data);
     <title>Astro</title>
   </head>
   <body>
-    <a href="/julius"> Julius</a>
-    <a href="/magnus"> magnus</a>
+    <Loader />
     <header>
       <Nav />
       <Hero />
