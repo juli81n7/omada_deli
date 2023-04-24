@@ -25,22 +25,6 @@ const eventdata = data.filter((item) => item.type == "event");
 <section>
   <div class="scrollnews">
     {
-      newsdata.map((item) => {
-        return (
-          <Newscard
-            header={item.header}
-            text={item.tekst.slice(0, 190) + "..."}
-            img={"../images/" + item.img + ".webp"}
-            day={item.day}
-            month={item.month}
-            price={item.price}
-            type={item.type}
-            id={"/undersider/" + item.id}
-          />
-        );
-      })
-    }
-    {
       eventdata.map((item) => {
         return (
           <Newscard
@@ -52,6 +36,22 @@ const eventdata = data.filter((item) => item.type == "event");
             price={item.price}
             type={item.type}
             id={item.id}
+          />
+        );
+      })
+    }
+    {
+      newsdata.map((item) => {
+        return (
+          <Newscard
+            header={item.header}
+            text={item.tekst.slice(0, 190) + "..."}
+            img={"../images/" + item.img + ".webp"}
+            day={item.day}
+            month={item.month}
+            price={item.price}
+            type={item.type}
+            id={"/undersider/" + item.id}
           />
         );
       })
