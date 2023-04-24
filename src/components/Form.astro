@@ -6,7 +6,7 @@ import Knap from "./knap.astro";
   <h2>Fortæl os hvad du synes</h2>
   <form>
     <div class="loading hide" id="loading">
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" is:inline></script>
       <lottie-player id="mylottie" src="https://lottie.host/0954720d-bb8f-4c6b-af6d-6efa3b368ea9/QQUIkYz543.json" autoplay></lottie-player>
       <h2 class="dontdisplay" id="tak">Tak for din feedback!</h2>
     </div>
@@ -200,6 +200,7 @@ import Knap from "./knap.astro";
       },
       body: JSON.stringify({ name, headline, text }),
     });
+
     formLoad.classList.remove("hide");
 
     setTimeout(function () {
