@@ -175,18 +175,6 @@ import Knap from "./knap.astro";
 </style>
 
 <script>
-  LottieInteractivity.create({
-    player: "#mylottie",
-    mode: "cursor",
-    actions: [
-      {
-        visibility: [0, 1.0],
-        type: "play",
-        state: "autoplay",
-      },
-    ],
-  });
-
   const url = "https://vvjmazqfuruokrbpmhso.supabase.co/rest/v1/testimonials";
   const key =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2am1henFmdXJ1b2tyYnBtaHNvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4MTg5NzUyNywiZXhwIjoxOTk3NDczNTI3fQ.QWRntyBVW2JVPQQ0e8hnIS7ZBHJLKDatB41zxZHxJlk";
@@ -227,6 +215,6 @@ import Knap from "./knap.astro";
     }, 4500);
     setTimeout(function () {
       formLoad.classList.add("hide");
-    }, 4600);
+    }, 4800);
   }
 </script>
