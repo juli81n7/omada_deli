@@ -177,11 +177,12 @@ import Knap from "./knap.astro";
 <script>
   LottieInteractivity.create({
     player: "#mylottie",
-    mode: "scroll",
+    mode: "cursor",
     actions: [
       {
         visibility: [0, 1.0],
         type: "play",
+        state: "autoplay",
       },
     ],
   });
