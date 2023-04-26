@@ -5,7 +5,7 @@ import Knap from "./knap.astro";
 <section>
   <h2>Fortæl os hvad du synes</h2>
   <form>
-    <div class="loading hide" id="loading">
+    <div class="loading hide dontdisplay" id="loading">
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" is:inline></script>
       <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js" is:inline></script>
       <lottie-player id="mylottie" src="../assets/loading_1.json" autoplay loop></lottie-player>
@@ -203,6 +203,7 @@ import Knap from "./knap.astro";
     });
 
     formLoad.classList.remove("hide");
+    formLoad.classList.remove("dontdisplay");
 
     setTimeout(function () {
       tak.classList.remove("dontdisplay");
